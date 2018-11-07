@@ -47,6 +47,12 @@ security_epel_install_repository: yes
 # (epel-release by default on CentOS) or a URL to an EPEL release RPM file.
 security_epel_release_package: epel-release
 
+## Auditbeat
+# Set the following variable to `no` to prevent the elastic-6.x repository from being
+# installed by the role. This may prevent certain packages from installing,
+# such as Auditbeat.
+security_elastic_install_repository: yes
+
 ###############################################################################
 #  ____  _   _ _____ _       _____   ____ _____ ___ ____
 # |  _ \| | | | ____| |     |___  | / ___|_   _|_ _/ ___|
