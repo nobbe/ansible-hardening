@@ -30,6 +30,12 @@
     filename: elastic-6.x
   when: ansible_os_family == 'Debian' and security_elastic_install_repository == true
 
+- name: Setup rpm key for elastic
+  rpm_key:
+    state: present
+    key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+  when: ansible_os_family == 'RedHat' and security_elastic_install_repository == false
+
 - name: stop auditd
   become: true
   command: killall auditd
