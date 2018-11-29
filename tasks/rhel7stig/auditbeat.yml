@@ -34,7 +34,7 @@
   rpm_key:
     state: present
     key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
-  when: ansible_os_family == 'RedHat' and security_elastic_install_repository == false
+  when: ansible_os_family == 'RedHat' and security_elastic_install_repository == true
 
 - name: stop auditd
   become: true
