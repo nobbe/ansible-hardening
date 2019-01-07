@@ -92,10 +92,12 @@ security_audit_daemon: auditd
 #security_audisp_remote_server: '10.0.21.1'                  # V-72083
 # Send audit records to a different system using auditbeat.
 security_auditbeat_logstash_servers: []               # V-72083
+security_audit_rule_files:
+  - '${path.config}/audit.rules.d/*.conf'
 security_auditbeat_config:
   auditbeat.modules:
   - module: auditd
-    audit_rule_files: [ '${path.config}/audit.rules.d/*.conf' ]
+    audit_rule_files: "{{ security_audit_rule_files }}"
   fields:
     type: audit
   fields_under_root: true
