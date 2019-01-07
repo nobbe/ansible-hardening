@@ -53,6 +53,8 @@
       - always
 
   - include_tasks: "{{ stig_version }}stig/main.yml"
+    tags:
+      - auditbeat
 
   - include_tasks: contrib/main.yml
     when:

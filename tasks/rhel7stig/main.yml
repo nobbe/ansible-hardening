@@ -84,6 +84,7 @@
   when: security_audit_daemon == 'auditd'
 - include_tasks: auditbeat.yml
   when: security_audit_daemon == 'auditbeat'
+  tags: auditbeat
 - include_tasks: auth.yml
 - include_tasks: file_perms.yml
 - include_tasks: graphical.yml
